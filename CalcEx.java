@@ -111,6 +111,7 @@ class CalcEx{
 			inputAsIs.add(test);
 			
 			}
+		fileReader.close();
 		}
 		catch(IOException e){
 			e.printStackTrace();
