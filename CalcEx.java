@@ -1,6 +1,6 @@
 /*
 
-Calculator program using dynamic array stack and linked list stack
+Math expression evaluator program using dynamic array stack and linked list stack
 Name: Deepak Pagaro
 
 email: dpagaro@gmu.edu
