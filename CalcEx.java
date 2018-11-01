@@ -1,144 +1,24 @@
 /*
 
-Calculator program using dynamic array stack and linked list stack
+Math expression evaluator program using dynamic array stack and linked list stack
 Name: Deepak Pagaro
 
 email: dpagaro@gmu.edu
 assignment start date: October 3,2017
 */
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
 import java.util.*;
 import java.io.*;
-// Dynamic array stack 
-class ArrayStack{
-	String[] stack=new String[100];
-	int top=-1;	
-	//increases the length of array 
-	void expandArray(){
-		int newlen=stack.length+10;
-		String[] temp=new String[newlen];
-		for(int i=0;i<stack.length;i++){
-			temp[i]=stack[i];
-		}
-		stack=temp;
-	}
-	// push operation for stack
-	void push(String element){
-		if(top+1>=stack.length){
-			expandArray();
-			System.out.println("******");
-		}
-		
-			stack[++top]=element;
-
-		
-
-	}
-	//pop operation for stack
-	String pop(){
-		String temp;
-		if(top==-1){
-			System.out.println("Stack is empty!!!\n");
-		}
-		else{
-			temp=stack[top];
-			top--;
-			return temp;
-			
-		}
-		return "";
-
-	}
-	//returns the top element of stack
-	String top(){
-		
-		return stack[top];
-	}
-	// checks whether stack is empty
-	boolean isEmpty(){
-		if(top==-1) return true;
-		else return false;
-	}
-}
-// Node class represents the node of linked list
-class Node{
-	String token;
-	Node next;	
-
-}
-// Linked list implementation of stack
-class StackLinkedList{
-	//topElement points to the head of the linked list, also the top of stack 
-	Node topElement;
-	int top=-1;	
-	// Constructor to initialize node object
-	StackLinkedList(){
-		topElement=new Node();
-		topElement=null;		
 
 
-	}
-	void push(String element){
-		Node temp=new Node();
-		Node temp1=new Node();
-		//adds node at the beginning if linkedlist(stack) is empty
-		if(topElement==null)
-		{
-			temp.token=element;
-			temp.next=null;
-			topElement=temp;
-			top++;
-		}
-		//adds node at the start of thelinkedlist(stack) ,also seen as the top ,if stack is not empty
-		else{
-			temp.token=element;
-			temp1=topElement;
-			temp.next=temp1;
-			topElement=temp;
-			top++;
-		}
-			
-	}
-	//pop elements from stack
-	String pop(){
-		String poppedElement;
-		Node temp=new Node();
-		if(top==-1){
-			System.out.println("Stack empty!!!!\n");
-		}
-		else{
-			temp=topElement;
-			poppedElement=topElement.token;			
-			temp=temp.next;
-			topElement=temp;
-			top--;
-			return(poppedElement);
-			
-		}
 
-		return "";
-		
-	}
-// returns the top of the stack
-	String top(){
-		return topElement.token;
-
-	}
-// tells if the stack is empty
-	boolean isEmpty(){
-		if(top==-1) return true;
-		else return false;
-	}
-}
 
 
 class CalcEx{
 	private static ArrayList<String> inputAsIs=new ArrayList<String>();
 	private static ArrayList<String> expressions=new ArrayList<String>();
-	private static int expCount=0;
-	private static int postCount=0;
+
 	//this function does the actual  basic math operations 
 	public  static String calculate(float op1,float op2,String operator){
 		       float result=0;		
@@ -479,7 +359,7 @@ public static int precedenceValue(String operator)
 		String[] expToken;
 		String test;
 		String result;
-		System.out.println("***********************Calculator Program***********************\n\n");
+		System.out.println("***********************Math Expression Evaluator***********************\n\n");
 		try{
 						
 			String fileName=args[0];
