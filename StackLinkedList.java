@@ -8,7 +8,7 @@ assignment start date: October 3,2017
 */
 
 // Linked list implementation of stack
-class StackLinkedList{
+class StackLinkedList implements Stack{
 	//topElement points to the head of the linked list, also the top of stack 
 	Node topElement;
 	int top=-1;	
